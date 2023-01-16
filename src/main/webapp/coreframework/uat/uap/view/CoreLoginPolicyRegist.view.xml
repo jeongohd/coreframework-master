@@ -1,0 +1,88 @@
+<mvc:View
+		controllerName="coreLoginPolicy.controller.CoreLoginPolicyRegist"
+		xmlns="sap.m"
+		xmlns:mvc="sap.ui.core.mvc"
+		xmlns:f="sap.ui.layout.form"
+		xmlns:l="sap.ui.layout"
+		xmlns:c="sap.ui.core"
+		busyIndicatorDelay="0">
+	<Page
+			id="coreLoginPolicyRegist"
+			title="로그인 정책관리"
+			showNavButton="true"
+			navButtonPress="onBack"
+			class="sapUiResponsiveContentPadding">
+		<content>
+			<VBox class="sapUiSmallMargin">
+				<f:SimpleForm id="SimpleFormToolbar"
+							  editable="true"
+							  layout="ResponsiveGridLayout"
+							  labelSpanXL="4"
+							  labelSpanL="3"
+							  labelSpanM="4"
+							  labelSpanS="12"
+							  adjustLabelSpan="false"
+							  emptySpanXL="0"
+							  emptySpanL="4"
+							  emptySpanM="0"
+							  emptySpanS="0"
+							  columnsXL="2"
+							  columnsL="1"
+							  columnsM="1"
+							  singleContainerFullSize="false"
+							  ariaLabelledBy="Title1"
+				>
+					<f:toolbar>
+						<Toolbar id="TB1">
+							<Title id="Title1" text="로그인 정책등록"/>
+							<ToolbarSpacer />
+
+						</Toolbar>
+					</f:toolbar>
+					<f:content>
+						<Toolbar ariaLabelledBy="Title2">
+							<Title id="Title2" text="로그인 정책을 등록 합니다."/>
+							<ToolbarSpacer />
+<!--							<Button icon="sap-icon://settings"/>-->
+						</Toolbar>
+						<Label text="사용자 ID" design="Bold" labelFor="emplyrId" />
+						<Input value="{/emplyrId}" enabled="true" editable="false" id="emplyrId" required="true"/>
+						<Label text="사용자 이름" design="Bold" labelFor="emplyrNm"/>
+						<Input value="{/emplyrNm}" required="true"/>
+						<Label text="IP 정보" design="Bold" labelFor="ipInfo"/>
+						<Input value="{/ipInfo}" required="true"/>
+						<Label text="IP 제한여부" design="Bold" labelFor="lmttAt"/>
+						<Select id="lmttAt" selectedKey="{/lmttAt}" width="10%">
+							<items>
+								<c:Item text="Y" key="Y"/>
+								<c:Item text="N" key="N"/>
+							</items>
+						</Select>
+
+					</f:content>
+				</f:SimpleForm>
+			</VBox>
+
+		</content>
+		<footer>
+			<OverflowToolbar id="otbFooter">
+				<ToolbarSpacer/>
+<!--				<Button type="Accept" text="Accept">-->
+<!--					<layoutData><OverflowToolbarLayoutData priority="NeverOverflow" /></layoutData>-->
+<!--				</Button>-->
+<!--				<Button type="Reject" text="Reject">-->
+<!--					<layoutData><OverflowToolbarLayoutData priority="NeverOverflow" /></layoutData>-->
+<!--				</Button>-->
+				<OverflowToolbarButton tooltip="Delete" text="삭제" icon="sap-icon://delete" press="onDelete"/>
+				<OverflowToolbarButton tooltip="Edit" text="수정" icon="sap-icon://edit" press="onEdit"/>
+				<OverflowToolbarButton tooltip="List" text="목록" icon="sap-icon://list" press="onToList"/>
+<!--				<OverflowToolbarButton tooltip="Add" text="Add" icon="sap-icon://add"/>-->
+<!--				<OverflowToolbarButton tooltip="Favorite" text="Favorite" icon="sap-icon://favorite"/>-->
+<!--				<OverflowToolbarButton tooltip="Flag" text="Flag" icon="sap-icon://flag"/>-->
+<!--				<OverflowToolbarToggleButton tooltip="Toggle" text="Toggle" icon="sap-icon://touch" press="onTogglePress"/>-->
+
+			</OverflowToolbar>
+
+		</footer>
+	</Page>
+</mvc:View>

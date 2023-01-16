@@ -1,0 +1,140 @@
+<mvc:View
+	controllerName="coreLoginPolicy.controller.CoreLoginPolicyList"
+	xmlns="sap.m"
+	xmlns:t="sap.ui.table"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:c="sap.ui.core"
+    height="100%">
+	<Page
+		showHeader="false"
+		enableScrolling="false"
+		title="로그인 정책관리"
+		class="sapUiResponsiveContentPadding"
+	>
+		<content>
+			<VBox class="sapUiSmallMargin">
+				<f:SimpleForm id="SimpleFormToolbar"
+							  editable="true"
+							  layout="ResponsiveGridLayout"
+							  labelSpanXL="4"
+							  labelSpanL="3"
+							  labelSpanM="4"
+							  labelSpanS="12"
+							  adjustLabelSpan="false"
+							  emptySpanXL="0"
+							  emptySpanL="4"
+							  emptySpanM="0"
+							  emptySpanS="0"
+							  columnsXL="2"
+							  columnsL="1"
+							  columnsM="1"
+							  singleContainerFullSize="false"
+							  ariaLabelledBy="Title1" >
+					<f:toolbar>
+						<Toolbar id="TB1">
+							<Title id="Title1" text="로그인 정책등록"/>
+							<ToolbarSpacer />
+							<Select id="searchCondition"
+									enabled="true"
+									editable="true"
+									forceSelection="false"
+									selectedKey="1"
+									change=".onLiveSearch">
+								<items>
+									<c:Item  text="사용자 ID"
+											 key="1" />
+									<c:Item  text="사용자 명"
+											 key="2"/>
+
+								</items>
+							</Select>
+							<SearchField id="searchKeyword" width="20%" liveChange=".onLiveSearch" search=".onLiveSearch"/>
+						</Toolbar>
+
+					</f:toolbar>
+					<f:content >
+						<Toolbar ariaLabelledBy="Title2">
+							<Title id="Title2" text="로그인 정책 목록입니다."/>
+							<ToolbarSpacer />
+							<!--							<Button icon="sap-icon://settings"/>-->
+						</Toolbar>
+
+					</f:content>
+
+				</f:SimpleForm>
+				<t:Table
+						rows="{/list}"
+						selectionMode="MultiToggle"
+						visibleRowCount="10"
+						paste="onPaste"
+						ariaLabelledBy="title"
+						id="idList"
+						cellClick="cellClick"
+						alternateRowColors="true"
+						width = "100%"
+				>
+
+					<t:columns>
+						<t:Column width="10%" autoResizable="true" sortProperty="emplyrId">
+							<Label text="사용자 ID" />
+							<t:template>
+								<Text text="{emplyrId}" wrapping="false" />
+							</t:template>
+						</t:Column>
+						<t:Column width="10%" sortProperty="emplyrNm">
+							<Label text="사용자 이름" />
+							<t:template>
+								<Text text="{emplyrNm}" wrapping="false" />
+							</t:template>
+						</t:Column>
+						<t:Column width="10%">
+							<Label text="사용자 구분" />
+							<t:template>
+								<Text text="{emplyrSe}" wrapping="false" />
+							</t:template>
+						</t:Column>
+						<t:Column width="10%">
+							<Label text="IP 정보" />
+							<t:template>
+								<Text text="{ipInfo}" wrapping="false" />
+							</t:template>
+						</t:Column>
+						<t:Column width="5%">
+							<Label text="중복허용" />
+							<t:template>
+								<Text text="{dplctPermAt}" wrapping="false" />
+							</t:template>
+						</t:Column>
+						<t:Column width="5%">
+							<Label text="제한" />
+							<t:template>
+								<Text text="{lmttAt}" wrapping="false" />
+							</t:template>
+						</t:Column>
+						<t:Column width="10%">
+							<Label text="등록 ID" />
+							<t:template>
+								<Text text="{userId}" wrapping="false" />
+							</t:template>
+						</t:Column>
+						<t:Column width="10%">
+							<Label text="등록일시" />
+							<t:template>
+								<Text text="{regDate}" wrapping="false" />
+							</t:template>
+						</t:Column>
+						<t:Column width="5%">
+							<Label text="등록" />
+							<t:template>
+								<Text text="{regYn}" wrapping="false" />
+							</t:template>
+						</t:Column>
+
+					</t:columns>
+				</t:Table>
+			</VBox>
+
+		</content>
+	</Page>
+</mvc:View>

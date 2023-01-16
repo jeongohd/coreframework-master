@@ -1,0 +1,93 @@
+{
+  "selectedKey": "home",
+  "navigation": [
+    {
+      "title": "Home",
+      "icon": "sap-icon://home",
+      "key": ""
+    },
+    {
+      "title": "기타",
+      "icon": "sap-icon://card",
+      "key": "etc"
+    },
+    {
+      "title": "공통분류코드",
+      "icon": "sap-icon://card",
+      "key": "ccmCmmnClCodeManage"
+    },
+    {
+      "title": "Settings",
+      "icon": "sap-icon://settings",
+      "expanded": true,
+      "key": "root1",
+      "items": [
+        {
+          "title": "System Settings",
+          "key": "systemSettings"
+        },
+        {
+          "title": "Child Item 2",
+          "key": "page2"
+        }
+      ]
+    },
+
+    {
+      "title": "Root Item",
+      "icon": "sap-icon://card",
+      "expanded": false,
+      "items": [
+        {
+          "title": "Child Item"
+        },
+        {
+          "title": "Child Item"
+        },
+        {
+          "title": "Child Item"
+        },
+        {
+          "title": "Child Item"
+        },
+        {
+          "title": "Child Item"
+        },
+        {
+          "title": "Child Item"
+        },
+        {
+          "title": "Child Item"
+        }
+      ]
+    },
+    {
+      "title": "Root Item",
+      "icon": "sap-icon://action",
+      "expanded": false,
+      "items": [
+        {
+          "title": "Child Item 1"
+        },
+        {
+          "title": "Child Item 2"
+        },
+        {
+          "title": "Child Item 3"
+        }
+      ]
+    }
+  ],
+  "fixedNavigation": [
+    {
+      "titleI18nKey": "sideContentImportantLinks",
+      "icon": "sap-icon://chain-link",
+      "key": "importantLinks"
+    },
+    {
+      "title": "sample",
+      "icon": "sap-icon://cloud",
+      "key": "sample"
+    }
+  ]
+}

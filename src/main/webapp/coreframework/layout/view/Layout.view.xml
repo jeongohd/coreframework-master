@@ -1,0 +1,78 @@
+<mvc:View height="100%"
+          xmlns:mvc="sap.ui.core.mvc"
+          xmlns="sap.m"
+          xmlns:f="sap.f"
+          xmlns:core="sap.ui.core"
+          xmlns:tnt="sap.tnt" controllerName="layoutRes.controller.Layout">
+    <tnt:ToolPage  id="app" class="sapUiDemoToolPage">
+        <tnt:header>
+            <f:ShellBar title="Manager System"
+                        secondTitle="관리자 시스템"
+                        showMenuButton="true"
+                        homeIcon="/images/coreframework/layout/coremethod.png"
+                        showCopilot="true"
+                        showNotifications="true"
+                        menuButtonPressed=".onSideNavButtonPress"
+                        showProductSwitcher="true"
+                        notificationsNumber="2">
+                <f:menu>
+                    <Menu>
+                        <MenuItem text="Flight booking" icon="sap-icon://flight" />
+                        <MenuItem text="Car rental" icon="sap-icon://car-rental" />
+                    </Menu>
+                </f:menu>
+                <f:profile>
+                    <Avatar initials="UI"/>
+                </f:profile>
+                <f:searchManager>
+                    <f:SearchManager/>
+                </f:searchManager>
+            </f:ShellBar>
+        </tnt:header>
+        <tnt:sideContent>
+            <tnt:SideNavigation
+                    xmlns="sap.tnt"
+                    xmlns:core="sap.ui.core"
+                    expanded="true"
+                    selectedKey="{side>/selectedKey}">
+                <tnt:NavigationList items="{path: 'side>/navigation'}">
+                    <tnt:NavigationListItem
+                            text="{side>title}"
+                            icon="{side>icon}"
+                            enabled="{side>enabled}"
+                            expanded="{side>expanded}"
+                            items="{path: 'side>items', templateShareable:true}"
+                            key="{side>key}"
+                            href="#/{side>key}">
+                        <tnt:NavigationListItem
+                                text="{side>title}"
+                                key="{side>key}"
+                                enabled="{side>enabled}"
+                                href="#/{side>key}"/>
+                    </tnt:NavigationListItem>
+                </tnt:NavigationList>
+                <tnt:fixedItem>
+                    <tnt:NavigationList items="{path: 'side>/fixedNavigation'}">
+                        <tnt:NavigationListItem
+                                text="{side>title}"
+                                icon="{side>icon}"
+                                enabled="{side>enabled}"
+                                expanded="{side>expanded}"
+                                items="{path: 'side>items', templateShareable:true}"
+                                key="{side>key}"
+                                href="#/{side>key}">
+                            <tnt:NavigationListItem
+                                    text="{side>title}"
+                                    key="{side>key}"
+                                    enabled="{enabled}"
+                                    href="#/{side>key}"/>
+                        </tnt:NavigationListItem>
+                    </tnt:NavigationList>
+                </tnt:fixedItem>
+            </tnt:SideNavigation>
+        </tnt:sideContent>
+        <tnt:mainContents>
+            <App id="mainContents"/>
+        </tnt:mainContents>
+    </tnt:ToolPage>
+</mvc:View>

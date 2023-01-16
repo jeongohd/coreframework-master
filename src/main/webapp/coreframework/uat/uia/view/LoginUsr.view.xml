@@ -1,0 +1,44 @@
+<mvc:View controllerName="uiaRes.controller.LoginUsr"
+          xmlns:html="http://www.w3.org/1999/xhtml"
+          xmlns:mvc="sap.ui.core.mvc"
+          xmlns:core="sap.ui.core"
+          displayBlock="true"
+          xmlns:form="sap.ui.layout.form"
+          xmlns:customData="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+          xmlns="sap.m">
+    <App backgroundImage="./image/dd.jpg">
+        <pages>
+            <Page showHeader="false">
+
+                <content>
+
+                    <VBox justifyContent="Center" alignItems="Center" height="500px" >
+                        <form:SimpleForm editable="true" layout="ResponsiveGridLayout"  id="loginForm">
+                            <form:content id="FormContent">
+                                <core:Title text="관리자 메뉴" />
+
+                                <Label  text="회원구분" />
+                                <RadioButtonGroup id="typeGroup"  columns="3" class="sapUiMediumMarginBottom"  select=".onSelect">
+                                    <RadioButton id="typeGnr" text="일반회원" customData:codeValue="GNR"/>
+                                    <RadioButton id="typeEnt" text="기업회원" customData:codeValue="ENT"/>
+                                    <RadioButton id="typeUsr" text="업무회원" customData:codeValue="USR"/>
+                                </RadioButtonGroup>
+
+                                <Label text="아이디" />
+                                <Input value="{/id}" placeholder="id"/>
+
+                                <Label text="비밀번호"/>
+                                <Input type="Password" value="{/password}"  placeholder="password"/>
+                                <Button text="login" press=".onLogin"/>
+                            </form:content>
+                        </form:SimpleForm>
+
+
+
+                    </VBox>
+                </content>
+
+            </Page>
+        </pages>
+    </App>
+</mvc:View>
